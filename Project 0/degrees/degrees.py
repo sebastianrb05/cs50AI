@@ -93,11 +93,6 @@ def shortest_path(source, target):
     """
 
     
-
-    num_explored = 0
-
-    # Need the first state to be movies for person one
-    
     start = Node(state=source, parent=None, action=None)
     frontier = QueueFrontier()
     frontier.add(start)
@@ -111,7 +106,6 @@ def shortest_path(source, target):
             raise Exception("no solution")
 
         node = frontier.remove()
-        num_explored += 1
 
         explored_states.add(node.state)
 
@@ -128,8 +122,6 @@ def shortest_path(source, target):
                     return solution
                 frontier.add(child)
 
-
-    # TODO
     raise NotImplementedError
 
 
